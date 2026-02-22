@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { div } from "framer-motion/client";
 
 import { Layout, Server, Layers, TrendingUp } from "lucide-react";
 
