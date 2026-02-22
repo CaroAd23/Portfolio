@@ -15,7 +15,7 @@ export default function About() {
       className="relative py-28 px-6 bg-neutral-950 text-neutral-100 overflow-hidden"
     >
       {/* subtle background glow */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-b from-transparent via-blue-500/5 to-transparent" />
 
       <div className="max-w-6xl mx-auto grid gap-16 md:grid-cols-2 md:items-center">
         
@@ -23,7 +23,7 @@ export default function About() {
   <div className="relative flex justify-center md:justify-center">
   
   {/* Rotating glow ring */}
-  <div className="absolute w-72 h-72 animate-slow-spin rounded-full bg-gradient-to-tr from-blue-700 via-cyan-600 to-blue-600 opacity-40 blur-xl" />
+  <div className="absolute w-72 h-72 animate-slow-spin rounded-full bg-linear-to-tr from-blue-700 via-cyan-600 to-blue-600 opacity-40 blur-xl" />
 
   {/* Mask layer (to keep ring thin) */}
   <div className="absolute w-64 h-64 rounded-full bg-neutral-950" />

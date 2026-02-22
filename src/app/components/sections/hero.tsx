@@ -24,11 +24,11 @@ export default function Hero() {
       className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden"
     >
       {/* GRID SUTIL */}
-      <div className="absolute inset-0 -z-30 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px]" />
+      <div className="absolute inset-0 -z-30 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[40px_40px]" />
 
       {/* GRADIENTE ANIMADO */}
       <motion.div
-        className="absolute -z-20 h-[600px] w-[600px] rounded-full blur-[140px]"
+        className="absolute -z-20 h-150 w-150 rounded-full blur-[140px]"
         style={{
           background:
             "radial-gradient(circle at center, rgba(59,130,246,0.35), transparent 70%)",
@@ -62,7 +62,7 @@ export default function Hero() {
             variants={item}
             className="text-5xl md:text-6xl font-semibold leading-tight"
           >
-            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
               Full Stack
             </span>
             <span className="animated-gradient font-semibold"> Developer</span>

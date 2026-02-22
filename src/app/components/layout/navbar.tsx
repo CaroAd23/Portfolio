@@ -61,7 +61,7 @@ export default function Navbar() {
               >
                 {item.name}
               </Link>
-              <span className="mt-1 block h-[2px] w-full origin-left scale-x-0 bg-sky-400/80 transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="mt-1 block h-0.5 w-full origin-left scale-x-0 bg-sky-400/80 transition-transform duration-300 group-hover:scale-x-100" />
             </li>
           ))}
         </ul>
