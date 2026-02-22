@@ -3,17 +3,19 @@
 import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Menu, X} from "lucide-react"
 
 const navBarItems = [
-  { name: "home", href: "/" },
-  { name: "about", href: "#about", id: "about" },
-  { name: "hero", href: "/src/app/components/sections/hero.tsx" },
-  { name: "skills", href: "/src/app/components/sections/skills.tsx" },
-  { name: "projects", href: "/src/app/components/sections/projects.tsx" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills"  },
+  { name: "Projects", href: "#projects"  },
+  { name: "Contact", href: "#contact" },
 ];
 export default function Navbar() {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     return scrollY.on("change", (latest) => {
       setScrolled(latest > 20);
@@ -63,7 +65,34 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <button onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-white"
+          >
+            {isOpen ? <X size={24}/> : <Menu size={24}/>}
+
+        </button>
       </nav>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden bg-neutral-900/95 backdrop-blur border-t border-blue-400/20"
+        >
+          <ul className="flex flex-col items-center gap-6 py-6">
+            {navBarItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-neutral-300 hover:text-sky-400 transition"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
     </motion.header>
   );
 }
